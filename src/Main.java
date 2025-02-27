@@ -22,10 +22,10 @@ public class Main {
             d2 = ale.nextInt((6- 1 + 1)) + min;
             contD2 +=d2;
 
-            System.out.println();
-            System.out.println("Dado 1: " + d1);
+            System.out.print("");
+            System.out.print("Dado 1: " + d1);
 
-            System.out.println("Dado 2: " +d2);
+            System.out.print(" Dado 2: " +d2);
             System.out.println();
 
         }
@@ -41,5 +41,5 @@ public class Main {
         }
 
 
-        }
     }
+}
