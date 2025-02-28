@@ -4,7 +4,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        double peso, estatura;
+        double peso, estatura, imc;
+
 
         Scanner teclado = new Scanner(System.in);
 
@@ -13,6 +14,14 @@ public class Main {
 
         System.out.println("Ingrese la estatura de la persona en metros");
         estatura = teclado.nextDouble();
+        imc = peso/(estatura * estatura);
+        System.out.println("Tu IMC es: "+imc);
+
+        if (imc < 18.5){
+            System.out.println("Bajo peso");
+        }
+
+
 
 
 
