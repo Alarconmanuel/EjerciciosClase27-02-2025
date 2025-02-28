@@ -4,13 +4,15 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
+        double peso, estatura;
+
         Scanner teclado = new Scanner(System.in);
 
         System.out.println("Ingrese el peso de la persona en Kg");
-        double peso = teclado.nextDouble();
+        peso = teclado.nextDouble();
 
         System.out.println("Ingrese la estatura de la persona en metros");
-        double estatura = teclado.nextDouble();
+        estatura = teclado.nextDouble();
 
 
 
