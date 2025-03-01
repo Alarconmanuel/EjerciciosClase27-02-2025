@@ -10,15 +10,14 @@ public class Main {
 
         Scanner teclado = new Scanner(System.in);
         Random ale = new Random();
-
+        num1 = ale.nextInt((max- min + 1)) + min;
+        num2 = ale.nextInt((max- min + 1)) + min;
+        System.out.println("El primer número generado es: "+num1);
+        System.out.println("El segundo número generado es: "+num2);
 
 
         System.out.println("CALCULADORA");
         do {
-            num1 = ale.nextInt((max- min + 1)) + min;
-            num2 = ale.nextInt((max- min + 1)) + min;
-            System.out.println("El primer número generado es: "+num1);
-            System.out.println("El segundo número generado es: "+num2);
             System.out.print("Operaciones: +, -, *, /, ^, %: ");
             operacion = teclado.next();
 
