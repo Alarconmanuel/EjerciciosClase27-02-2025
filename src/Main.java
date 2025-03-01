@@ -1,39 +1,59 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
 
-        double peso, estatura, imc;
-
+        int min=1, max= 100, num1, num2, continuar, respuesta;
+        double respuesta2;
+        String operacion;
 
         Scanner teclado = new Scanner(System.in);
-
-        System.out.print("Ingrese el peso de la persona en Kg: ");
-        peso = teclado.nextDouble();
-
-        System.out.print("Ingrese la estatura de la persona en metros: ");
-        estatura = teclado.nextDouble();
-        imc = peso/(estatura * estatura);
-        System.out.println("Tu IMC es: "+imc);
-
-        if (imc < 18.5){
-            System.out.println("Bajo peso");
-        } else if (imc >= 18.5 && imc <= 24.9) {
-            System.out.println("peso normal");
-        } else if (imc >= 25 && imc <=26.9 ) {
-            System.out.println("Sobrepeso grado I");
-        } else if (imc >= 27 && imc <=29.9){
-            System.out.println("Sobrepeso grado II");
-        } else if (imc >= 30 && imc <=34.9 ) {
-            System.out.println("Obesidad tipo I");
-        } else if (imc >= 35 && imc <=39.9 ) {
-            System.out.println("Obesidad tipo II");
-        } else if (imc >= 40 && imc <=49.9 ) {
-            System.out.println("Obesidad tipo III (mórbida)");
-        } else {
-            System.out.println("Obesidad tipo IV (extrema)");
-        }
+        Random ale = new Random();
 
 
+
+        System.out.println("CALCULADORA");
+        do {
+            num1 = ale.nextInt((max- min + 1)) + min;
+            num2 = ale.nextInt((max- min + 1)) + min;
+            System.out.println("El primer número generado es: "+num1);
+            System.out.println("El segundo número generado es: "+num2);
+            System.out.print("Operaciones: +, -, *, /, ^, %: ");
+            operacion = teclado.next();
+
+            switch (operacion) {
+              case "+" -> {
+                  respuesta = num1+num2;
+                System.out.println("La suma de "+num1+" y "+num2+" es: "+respuesta);
+              }
+              case "-" ->  {
+                  respuesta = num1-num2;
+                System.out.println("La resta de "+num1+" y "+num2+" es: "+respuesta);
+              }
+              case "*" ->  {
+                  respuesta = num1*num2;
+                System.out.println("La multiplicación entre "+num1+" y "+num2+" es: "+respuesta);
+              }
+              case "/" ->  {
+                  respuesta2 = (double)num1/num2;
+                System.out.println("La división entre "+num1+" y "+num2+" es: "+respuesta2);
+              }
+              case "^" ->  {
+                  respuesta2 = Math.pow(num1,num2);
+                System.out.println(num1 +" elevado a "+num2+" es: "+respuesta2);
+              }
+              case "%" -> {
+                  respuesta = num1%num2;
+                  System.out.println("El residuo entre "+num1+" y "+num2+" es: "+respuesta);
+              }
+                default ->
+                    System.out.println("Escoja una opción válida");
+            }
+
+            System.out.println("Si desea hacer otra operacion oprima 1 de lo contrario oprima 2");
+            continuar = teclado.nextInt();
+        } while(continuar==1);
+        System.out.println("Fin");
     }
 }
